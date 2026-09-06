@@ -1,0 +1,86 @@
+{
+  "schema_version": 1,
+  "clock": "perf_counter_ns",
+  "nodes": [
+    {
+      "id": "source-263e891a",
+      "name": "source",
+      "pid": 58763,
+      "start_ns": 17176472996964,
+      "end_ns": 17176487556615,
+      "input_bytes_estimate": 17,
+      "output_bytes_estimate": 900331
+    },
+    {
+      "id": "normalize-0601b092",
+      "name": "normalize",
+      "pid": 58763,
+      "start_ns": 17176519269884,
+      "end_ns": 17176532866832,
+      "input_bytes_estimate": 900331,
+      "output_bytes_estimate": 900331
+    },
+    {
+      "id": "mean-fed43710",
+      "name": "mean",
+      "pid": 58763,
+      "start_ns": 17176570235976,
+      "end_ns": 17176571399959,
+      "input_bytes_estimate": 900331,
+      "output_bytes_estimate": 21
+    },
+    {
+      "id": "energy-be1f123c",
+      "name": "energy",
+      "pid": 58763,
+      "start_ns": 17176583568363,
+      "end_ns": 17176590191182,
+      "input_bytes_estimate": 900331,
+      "output_bytes_estimate": 21
+    },
+    {
+      "id": "report-25b8e6c9",
+      "name": "report",
+      "pid": 58763,
+      "start_ns": 17176594806625,
+      "end_ns": 17176594809295,
+      "input_bytes_estimate": 32,
+      "output_bytes_estimate": 50
+    }
+  ],
+  "edges": [
+    {
+      "source": "source-263e891a",
+      "target": "normalize-0601b092",
+      "transfer": "pickle",
+      "estimated_serialized_bytes": 900331
+    },
+    {
+      "source": "normalize-0601b092",
+      "target": "mean-fed43710",
+      "transfer": "pickle",
+      "estimated_serialized_bytes": 900331
+    },
+    {
+      "source": "normalize-0601b092",
+      "target": "energy-be1f123c",
+      "transfer": "pickle",
+      "estimated_serialized_bytes": 900331
+    },
+    {
+      "source": "mean-fed43710",
+      "target": "report-25b8e6c9",
+      "transfer": "pickle",
+      "estimated_serialized_bytes": 21
+    },
+    {
+      "source": "energy-be1f123c",
+      "target": "report-25b8e6c9",
+      "transfer": "pickle",
+      "estimated_serialized_bytes": 21
+    }
+  ],
+  "limitations": [
+    "serialized sizes are estimates, not measured OS traffic"
+  ]
+}

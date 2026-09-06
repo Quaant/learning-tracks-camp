@@ -1,0 +1,12 @@
+digraph dataflow {
+  "source-263e891a" [label="source\n14.560 ms\npid=58763"];
+  "normalize-0601b092" [label="normalize\n13.597 ms\npid=58763"];
+  "mean-fed43710" [label="mean\n1.164 ms\npid=58763"];
+  "energy-be1f123c" [label="energy\n6.623 ms\npid=58763"];
+  "report-25b8e6c9" [label="report\n0.003 ms\npid=58763"];
+  "source-263e891a" -> "normalize-0601b092" [label="900331 B\npickle"];
+  "normalize-0601b092" -> "mean-fed43710" [label="900331 B\npickle"];
+  "normalize-0601b092" -> "energy-be1f123c" [label="900331 B\npickle"];
+  "mean-fed43710" -> "report-25b8e6c9" [label="21 B\npickle"];
+  "energy-be1f123c" -> "report-25b8e6c9" [label="21 B\npickle"];
+}
